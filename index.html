@@ -447,7 +447,7 @@
               <div class="form-group" style="padding: 20px;" >
                 
                   
-                <label class="checkbox-container">Change To Popup for Self Register
+                <label for="changeToPopupSR"  class="checkbox-container">Change To Popup for Self Register
                   <input type="checkbox" id="changeToPopupSR" name="changeToPopupSR" checked="checked">
                   <span class="checkmark"></span>
                 </label>
@@ -468,7 +468,7 @@
               </div>
               <div class="form-group" style="padding: 20px;" >
                 
-                  <label class="checkbox-container">Change To Popup for Login
+                  <label  for="changeToPopupLogin"  class="checkbox-container">Change To Popup for Login
                     <input type="checkbox" id="changeToPopupLogin" name="changeToPopupLogin" >
                     <span class="checkmark"></span>
                   </label>
@@ -578,50 +578,14 @@
         };
 
         function myFunction() {
-          configWidget = {
-            baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
-            showPage: true,
-            showLogin: false,
-            changeToPopup: document.getElementById("changeToPopupSR").value,
-            accountId: document.getElementById("accountId").value,
-            appId: document.getElementById("appId").value,
-            linkForTC: 'https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html',
-            linkForAbsoluteAndroid: 'https://play.google.com/store/apps/details?id=com.bluebricks.absolutetoken',
-            linkForAbsoluteIOS: 'https://apps.apple.com/us/app/absolute-token/id1564689079',
-            linkForGoogleAndroid: 'https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2',
-            linkForGoogleIOS: 'https://apps.apple.com/us/app/google-authenticator/id388497605',
-            linkForMicrosoftAndroid: 'https://play.google.com/store/apps/details?id=com.azure.authenticator&amp;hl=en_IN&amp;gl=US',
-            linkForMicrosoftIOS: 'https://apps.apple.com/us/app/microsoft-authenticator/id983156458',
-            onResponse: function onResponse(data) {
-              console.log("Response item :::", data);
-            },
-            onError: function onError(data) {
-              console.log("Error item :::", data);
-            },
-            onClose: function onClose(data) {
-              console.log("Close item :::", data);
-            }
-          };
-
-          configVerify = {
-            baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
-            showPage: true,
-            changeToPopup: document.getElementById("changeToPopupLogin").value,
-            accountId: document.getElementById("accountId").value,
-            appId: document.getElementById("appId").value,
-            linkForTC: "https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html",
-            onResponse: function onResponse(data) {
-              console.log("Response item :::", data);
-            },
-            onError: function onError(data) {
-              console.log("Error item :::", data);
-            },
-            onClose: function onClose(data) {
-              console.log("Close item :::", data);
-            }
-          };
+          configWidget.changeToPopup= document.getElementById("changeToPopupSR").checked;
+          configWidget.accountId= document.getElementById("accountId").value;
+          configWidget.appId= document.getElementById("appId").value;
+          configVerify.changeToPopup= document.getElementById("changeToPopupLogin").checked;
+          configVerify.accountId= document.getElementById("accountId").value;
+          configVerify.appId= document.getElementById("appId").value;
         };
-          
+
         var element1 = document.getElementById("useiri");
         element1.addEventListener("click", function () {
           iri.IRIWidget(configWidget);
