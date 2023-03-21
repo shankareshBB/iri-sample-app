@@ -55,6 +55,14 @@
           </li>
         </ul>
       </nav>
+
+      <script>
+        
+      </script>
+
+
+
+
       <div class="container-fluid">
         <!-- Start: Header -->
         <div class="row hero-header" id="home">
@@ -394,52 +402,71 @@
       <!-- End: Schedule -->
 
       <!-- Start: Footer -->
-      <!-- <div class="container-fluid footer">
+      <div class="container-fluid footer">
         <div class="row contact">
-          <div class="col-md-6 contact-form">
-            <h3 class="content-ct"><span class="ti-email"></span> Contact Form</h3>
-            <form class="form-horizontal" data-toggle="validator" role="form">
-              <div class="form-group">
-                <label for="name" class="col-sm-3 control-label">Name<sup>*</sup></label>
+          <div class="col-md-6 contact-form" style="display: flex; flex-direction: column; align-items: center;" style="padding: 5rem;" >
+            <h3 class="content-ct">
+              <!-- <span class="ti-email"></span>  -->
+              Config Form
+            </h3>
+            <!-- <form class="form-horizontal" data-toggle="validator" role="form"> -->
+              <div class="form-group" style="padding: 20px;" >
+                <label for="accountId" class="col-sm-3 control-label">accountId<sup>*</sup></label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+                  <input type="text" class="form-control" id="accountId" placeholder="accountId" value="DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20" required style="
+                  padding: 1rem;
+                  min-width: 400px;
+              ">
                   <div class="help-block with-errors pull-right"></div>
                   <span class="form-control-feedback" aria-hidden="true"></span>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="email" class="col-sm-3 control-label">Email<sup>*</sup></label>
+              <div class="form-group" style="padding: 20px;" >
+                <label for="appId" class="col-sm-3 control-label">appId<sup>*</sup></label>
                 <div class="col-sm-9">
-                  <input type="email" class="form-control" id="email" placeholder="you@youremail.com" required>
+                  <input type="text" class="form-control" id="appId" placeholder="appId" value="GWfR0u" required style="
+                  padding: 1rem;
+                  min-width: 200px;
+              ">
                   <div class="help-block with-errors pull-right"></div>
                   <span class="form-control-feedback" aria-hidden="true"></span>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="message" class="col-sm-3 control-label">Your Message<sup>*</sup></label>
+              <div class="form-group" style="padding: 20px;" >
+                
                 <div class="col-sm-9">
-                  <textarea id="message" class="form-control" rows="3" required></textarea>
+                  <input type="checkbox" id="changeToPopupSR" name="changeToPopupSR">
+                  <label for="changeToPopupSR" class="col-sm-3 control-label">Change To Popup for Self Register</label>
                   <div class="help-block with-errors pull-right"></div>
                   <span class="form-control-feedback" aria-hidden="true"></span>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="padding: 20px;" >
+                
+                <div class="col-sm-9">
+                  <input type="checkbox" id="changeToPopupLogin" name="changeToPopupLogin">
+                  <label for="changeToPopupLogin" class="col-sm-3 control-label">Change To Popup for Login</label>
+                  <div class="help-block with-errors pull-right"></div>
+                  <span class="form-control-feedback" aria-hidden="true"></span>
+                </div>
+              </div>
+              <!-- <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
                   <button type="submit" id="submit" name="submit" class="btn btn-yellow pull-right">Send <span class="ti-arrow-right"></span></button>
                 </div>
               </div>
-            </form>
+            </form> -->
           </div>
-          <div class="col-md-4 col-md-offset-1 content-ct">
+          <!-- <div class="col-md-4 col-md-offset-1 content-ct">
             <h3><span class="ti-twitter"></span> Twitter Feed</h3>
             <p>Lorem <a href="#">#Ipsum</a> is a dummy text used as a text filler in designs. This is just a dummy text. via <a href="#">@designerdada</a> </p>
             <hr>
             <p>Lorem Ipsum is a <a href="#">#dummy</a> text used as a text filler in designs. This is just a dummy text. via <a href="#">@designerdada</a> </p>
             <hr>
             <p>Lorem Ipsum is a <a href="#">#dummy</a> text used as a text filler in designs. This is just a dummy text. via <a href="#">@designerdada</a> </p>
-          </div>
+          </div> -->
         </div>
-        <div class="row footer-credit">
+        <!-- <div class="row footer-credit">
           <div class="col-md-6 col-sm-6">
             <p>&copy; 2023, <a href="https://blue-bricks.com/">Blue bricks</a> | All rights reserved.</p>
           </div>
@@ -450,8 +477,8 @@
               <li><a href="#">Terms &amp; Condition</a></li>
             </ul>
           </div>
-        </div>
-      </div> -->
+        </div> -->
+      </div>
       <!-- End: Footer -->
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -465,13 +492,18 @@
       <script src="https://cdn.jsdelivr.net/npm/iri-widget@1.1.0/dist/index.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/iri-verify@1.1.0/dist/index.min.js"></script>
       <script>
-        const configWidget = {
+        document.getElementById("accountId").onchange = function() {myFunction()};
+        document.getElementById("appId").onchange = function() {myFunction()};
+        document.getElementById("changeToPopupSR").onchange = function() {myFunction()};
+        document.getElementById("changeToPopupLogin").onchange = function() {myFunction()};
+
+        var configWidget = {
           baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
           showPage: true,
           showLogin: false,
-          changeToPopup: true,
-          accountId: "DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20",
-          appId: "GWfR0u",
+          changeToPopup: document.getElementById("changeToPopupSR").value,
+          accountId: document.getElementById("accountId").value,
+          appId: document.getElementById("appId").value,
           linkForTC: 'https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html',
           linkForAbsoluteAndroid: 'https://play.google.com/store/apps/details?id=com.bluebricks.absolutetoken',
           linkForAbsoluteIOS: 'https://apps.apple.com/us/app/absolute-token/id1564689079',
@@ -489,18 +521,13 @@
             console.log("Close item :::", data);
           }
         };
-        var element = document.getElementById("useiri");
-        element.addEventListener("click", function () {
-          iri.IRIWidget(configWidget);
-        });
-      </script>
-      <script>
-        const configVerify = {
+
+        var configVerify = {
           baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
           showPage: true,
-          changeToPopup: false,
-          accountId: "DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20",
-          appId: "GWfR0u",
+          changeToPopup: document.getElementById("changeToPopupSR").value,
+          accountId: document.getElementById("accountId").value,
+          appId: document.getElementById("appId").value,
           linkForTC: "https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html",
           onResponse: function onResponse(data) {
             console.log("Response item :::", data);
@@ -512,8 +539,59 @@
             console.log("Close item :::", data);
           }
         };
-        var element = document.getElementById("iriuser");
-        element.addEventListener("click", function () {
+
+        function myFunction() {
+          configWidget = {
+            baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
+            showPage: true,
+            showLogin: false,
+            changeToPopup: document.getElementById("changeToPopupSR").value,
+            accountId: document.getElementById("accountId").value,
+            appId: document.getElementById("appId").value,
+            linkForTC: 'https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html',
+            linkForAbsoluteAndroid: 'https://play.google.com/store/apps/details?id=com.bluebricks.absolutetoken',
+            linkForAbsoluteIOS: 'https://apps.apple.com/us/app/absolute-token/id1564689079',
+            linkForGoogleAndroid: 'https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2',
+            linkForGoogleIOS: 'https://apps.apple.com/us/app/google-authenticator/id388497605',
+            linkForMicrosoftAndroid: 'https://play.google.com/store/apps/details?id=com.azure.authenticator&amp;hl=en_IN&amp;gl=US',
+            linkForMicrosoftIOS: 'https://apps.apple.com/us/app/microsoft-authenticator/id983156458',
+            onResponse: function onResponse(data) {
+              console.log("Response item :::", data);
+            },
+            onError: function onError(data) {
+              console.log("Error item :::", data);
+            },
+            onClose: function onClose(data) {
+              console.log("Close item :::", data);
+            }
+          };
+
+          configVerify = {
+            baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
+            showPage: true,
+            changeToPopup: document.getElementById("changeToPopupLogin").value,
+            accountId: document.getElementById("accountId").value,
+            appId: document.getElementById("appId").value,
+            linkForTC: "https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html",
+            onResponse: function onResponse(data) {
+              console.log("Response item :::", data);
+            },
+            onError: function onError(data) {
+              console.log("Error item :::", data);
+            },
+            onClose: function onClose(data) {
+              console.log("Close item :::", data);
+            }
+          };
+        };
+          
+        var element1 = document.getElementById("useiri");
+        element1.addEventListener("click", function () {
+          iri.IRIWidget(configWidget);
+        });
+
+        var element2 = document.getElementById("iriuser");
+        element2.addEventListener("click", function () {
           iri_verify.IRIVerify(configVerify);
         });
       </script>
