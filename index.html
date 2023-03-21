@@ -14,7 +14,7 @@
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/themify-icons.css" rel="stylesheet">
-  <!-- <link href='css/dosis-font.css' rel='stylesheet' type='text/css'> -->
+  <link href='css/dosis-font.css' rel='stylesheet' type='text/css'>
   
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -462,46 +462,60 @@
       <script src="js/scrolling-nav.js"></script>
       <script src="js/validator.js"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/iri-widget@1.0.7/dist/index.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/iri-verify@1.0.2/dist/index.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/iri-widget@1.1.0/dist/index.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/iri-verify@1.1.0/dist/index.min.js"></script>
       <script>
-          const configWidget = {
-              baseurl:"https://access.axiomprotect.com:6653/AxiomProtect/v1",
-              showPopup: true,
-              linkForTC:"https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html",
-              onResponse: function onResponse(data) {
-                console.log("Response item :::", data);
-              },
-              onError: function onError(data) {
-                console.log("Error item :::", data);
-              },
-              onPopupClose: function onPopupClose(data) {
-                console.log("Popup close item :::", data);
-              }
-          };
-          var element = document.getElementById("useiri");
-          element.addEventListener("click", function () {
-            iri.IRIWidget(configWidget);
-          });
+        const configWidget = {
+          baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
+          showPage: true,
+          showLogin: false,
+          changeToPopup: true,
+          accountId: "DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20",
+          appId: "GWfR0u",
+          linkForTC: 'https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html',
+          linkForAbsoluteAndroid: 'https://play.google.com/store/apps/details?id=com.bluebricks.absolutetoken',
+          linkForAbsoluteIOS: 'https://apps.apple.com/us/app/absolute-token/id1564689079',
+          linkForGoogleAndroid: 'https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2',
+          linkForGoogleIOS: 'https://apps.apple.com/us/app/google-authenticator/id388497605',
+          linkForMicrosoftAndroid: 'https://play.google.com/store/apps/details?id=com.azure.authenticator&amp;hl=en_IN&amp;gl=US',
+          linkForMicrosoftIOS: 'https://apps.apple.com/us/app/microsoft-authenticator/id983156458',
+          onResponse: function onResponse(data) {
+            console.log("Response item :::", data);
+          },
+          onError: function onError(data) {
+            console.log("Error item :::", data);
+          },
+          onClose: function onClose(data) {
+            console.log("Close item :::", data);
+          }
+        };
+        var element = document.getElementById("useiri");
+        element.addEventListener("click", function () {
+          iri.IRIWidget(configWidget);
+        });
       </script>
       <script>
         const configVerify = {
-            baseurl:"https://access.axiomprotect.com:6653/AxiomProtect/v1",
-            showPage: true,
-            onResponse: function onResponse(data) {
-                console.log("Response item :::", data);
-            },
-            onError: function onError(data) {
-                console.log("Error item :::", data);
-            },
-            onPageClose: function onPageClose(data) {
-                console.log("Page close item :::", data);
-            }
+          baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
+          showPage: true,
+          changeToPopup: false,
+          accountId: "DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20",
+          appId: "GWfR0u",
+          linkForTC: "https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html",
+          onResponse: function onResponse(data) {
+            console.log("Response item :::", data);
+          },
+          onError: function onError(data) {
+            console.log("Error item :::", data);
+          },
+          onClose: function onClose(data) {
+            console.log("Close item :::", data);
+          }
         };
         var element = document.getElementById("iriuser");
         element.addEventListener("click", function () {
-            iri_verify.IRIVerify(configVerify);
+          iri_verify.IRIVerify(configVerify);
         });
-    </script>
+      </script>
     </body>
     </html>
