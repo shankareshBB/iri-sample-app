@@ -410,23 +410,35 @@
               Config Form
             </h3>
             <!-- <form class="form-horizontal" data-toggle="validator" role="form"> -->
-              <div class="form-group" style="padding: 20px;" >
+              <div class="form-group" style="padding: 20px; text-align: center;" >
                 <label for="accountId" class="col-sm-3 control-label">accountId<sup>*</sup></label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" id="accountId" placeholder="accountId" value="DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20" required style="
+                <div class="col-sm-9" style="
+                padding-top: 5px;
+            ">
+                  <input type="text" class="form-control" id="accountId" placeholder="accountId" value="DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20" required 
+                  style="
+                  border: 0;
+                  outline: 0;
                   padding: 1rem;
                   min-width: 400px;
+                  border-radius: 8px;
               ">
                   <div class="help-block with-errors pull-right"></div>
                   <span class="form-control-feedback" aria-hidden="true"></span>
                 </div>
               </div>
-              <div class="form-group" style="padding: 20px;" >
+              <div class="form-group" style="padding: 20px; text-align: center;" >
                 <label for="appId" class="col-sm-3 control-label">appId<sup>*</sup></label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" id="appId" placeholder="appId" value="GWfR0u" required style="
+                <div class="col-sm-9" style="
+                padding-top: 5px;
+            ">
+                  <input type="text" class="form-control" id="appId" placeholder="appId" value="GWfR0u" required 
+                  style="
+                  border: 0;
+                  outline: 0;
                   padding: 1rem;
                   min-width: 200px;
+                  border-radius: 8px;
               ">
                   <div class="help-block with-errors pull-right"></div>
                   <span class="form-control-feedback" aria-hidden="true"></span>
@@ -434,21 +446,46 @@
               </div>
               <div class="form-group" style="padding: 20px;" >
                 
-                <div class="col-sm-9">
-                  <input type="checkbox" id="changeToPopupSR" name="changeToPopupSR">
-                  <label for="changeToPopupSR" class="col-sm-3 control-label">Change To Popup for Self Register</label>
+                  
+                <label class="checkbox-container">Change To Popup for Self Register
+                  <input type="checkbox" id="changeToPopupSR" name="changeToPopupSR" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+
+                <!-- <div class="col-sm-9">
+                  <input type="checkbox" 
+                  style="
+                  border: 0;
+                  outline: 0;
+                  padding: 1rem;
+                  min-width: 200px;
+                  border-radius: 8px;
+              ">
+                  <label for="changeToPopupSR" class="col-sm-3 control-label"></label>
                   <div class="help-block with-errors pull-right"></div>
                   <span class="form-control-feedback" aria-hidden="true"></span>
-                </div>
+                </div> -->
               </div>
               <div class="form-group" style="padding: 20px;" >
                 
-                <div class="col-sm-9">
-                  <input type="checkbox" id="changeToPopupLogin" name="changeToPopupLogin">
-                  <label for="changeToPopupLogin" class="col-sm-3 control-label">Change To Popup for Login</label>
+                  <label class="checkbox-container">Change To Popup for Login
+                    <input type="checkbox" id="changeToPopupLogin" name="changeToPopupLogin" >
+                    <span class="checkmark"></span>
+                  </label>
+
+                <!-- <div class="col-sm-9">
+                  <input type="checkbox" 
+                  style="
+                  border: 0;
+                  outline: 0;
+                  padding: 1rem;
+                  min-width: 200px;
+                  border-radius: 8px;
+              ">
+                  <label for="changeToPopupLogin" class="col-sm-3 control-label"></label>
                   <div class="help-block with-errors pull-right"></div>
                   <span class="form-control-feedback" aria-hidden="true"></span>
-                </div>
+                </div> -->
               </div>
               <!-- <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
