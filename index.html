@@ -407,11 +407,29 @@
           <div class="col-md-6 contact-form" style="display: flex; flex-direction: column; align-items: center;" style="padding: 5rem;" >
             <h2 class="content-ct">
               <!-- <span class="ti-email"></span>  -->
-              Configuration setting
+              CONFIGURATION SETTING
             </h2>
             <!-- <form class="form-horizontal" data-toggle="validator" role="form"> -->
               <div class="form-group" style="padding: 20px; text-align: center;" >
-                <label for="accountId" class="col-sm-3 control-label">accountId<sup>*</sup></label>
+                <label for="baseurl" class="col-sm-3 control-label">BASE URL<sup>*</sup></label>
+                <div class="col-sm-9" style="
+                padding-top: 5px;
+            ">
+                  <input type="text" class="form-control" id="baseurl" placeholder="baseurl" value="https://access.axiomprotect.com:6653/AxiomProtect/v1" required 
+                  style="
+                  border: 0;
+                  outline: 0;
+                  padding: 1rem;
+                  min-width: 400px;
+                  border-radius: 8px;
+              ">
+                  <div class="help-block with-errors pull-right"></div>
+                  <span class="form-control-feedback" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="form-group" style="padding: 20px; text-align: center;" >
+                <label for="accountId" class="col-sm-3 control-label">ACCOUNT ID<sup>*</sup></label>
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
@@ -428,7 +446,7 @@
                 </div>
               </div>
               <div class="form-group" style="padding: 20px; text-align: center;" >
-                <label for="appId" class="col-sm-3 control-label">appId<sup>*</sup></label>
+                <label for="appId" class="col-sm-3 control-label">APP ID<sup>*</sup></label>
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
@@ -437,7 +455,7 @@
                   border: 0;
                   outline: 0;
                   padding: 1rem;
-                  min-width: 200px;
+                  min-width: 400px;
                   border-radius: 8px;
               ">
                   <div class="help-block with-errors pull-right"></div>
@@ -529,13 +547,14 @@
       <script src="https://cdn.jsdelivr.net/npm/iri-widget@1.1.0/dist/index.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/iri-verify@1.1.0/dist/index.min.js"></script>
       <script>
+        document.getElementById("baseurl").onchange = function() {myFunction()};
         document.getElementById("accountId").onchange = function() {myFunction()};
         document.getElementById("appId").onchange = function() {myFunction()};
         document.getElementById("changeToPopupSR").onchange = function() {myFunction()};
         document.getElementById("changeToPopupLogin").onchange = function() {myFunction()};
 
         var configWidget = {
-          baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
+          baseurl: document.getElementById("baseurl").value,
           showPage: true,
           showLogin: false,
           changeToPopup: document.getElementById("changeToPopupSR").checked,
@@ -560,7 +579,7 @@
         };
 
         var configVerify = {
-          baseurl: "https://access.axiomprotect.com:6653/AxiomProtect/v1",
+          baseurl: document.getElementById("baseurl").value,
           showPage: true,
           changeToPopup: document.getElementById("changeToPopupLogin").checked,
           accountId: document.getElementById("accountId").value,
@@ -579,9 +598,11 @@
 
         function myFunction() {
           configWidget.changeToPopup= document.getElementById("changeToPopupSR").checked;
+          configWidget.baseurl= document.getElementById("baseurl").value;
           configWidget.accountId= document.getElementById("accountId").value;
           configWidget.appId= document.getElementById("appId").value;
           configVerify.changeToPopup= document.getElementById("changeToPopupLogin").checked;
+          configVerify.baseurl= document.getElementById("baseurl").value;
           configVerify.accountId= document.getElementById("accountId").value;
           configVerify.appId= document.getElementById("appId").value;
         };
