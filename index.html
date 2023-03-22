@@ -553,12 +553,6 @@
       <script src="https://cdn.jsdelivr.net/npm/iri-widget@1.1.0/dist/index.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/iri-verify@1.1.0/dist/index.min.js"></script>
       <script>
-        document.getElementById("baseurl").onchange = function() {myFunction()};
-        document.getElementById("accountId").onchange = function() {myFunction()};
-        document.getElementById("appId").onchange = function() {myFunction()};
-        document.getElementById("changeToPopupSR").onchange = function() {myFunction()};
-        document.getElementById("changeToPopupLogin").onchange = function() {myFunction()};
-
         var configWidget = {
           baseurl: document.getElementById("baseurl").value,
           showPage: true,
@@ -601,6 +595,12 @@
             console.log("Close item :::", data);
           }
         };
+        
+        document.getElementById("baseurl").onchange = function() {myFunction()};
+        document.getElementById("accountId").onchange = function() {myFunction()};
+        document.getElementById("appId").onchange = function() {myFunction()};
+        document.getElementById("changeToPopupSR").onchange = function() {myFunction()};
+        document.getElementById("changeToPopupLogin").onchange = function() {myFunction()};
 
         function myFunction() {
           configWidget.changeToPopup= document.getElementById("changeToPopupSR").checked;
