@@ -423,7 +423,7 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="baseurl" placeholder="baseurl" value="https://access.axiomprotect.com:6653/AxiomProtect/v1" required 
+                  <input type="text" class="form-control" id="baseurl" placeholder="baseurl" value="https://103.76.249.54:9903/AxiomProtect/v1" required 
                   style="
                   border: 0;
                   outline: 0;
@@ -441,7 +441,7 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="accountId" placeholder="accountId" value="DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20" required 
+                  <input type="text" class="form-control" id="accountId" placeholder="accountId" value="DD217C1F-2C7E-4EFB-B378-72E811852CCF" required 
                   style="
                   border: 0;
                   outline: 0;
@@ -458,7 +458,25 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="appId" placeholder="appId" value="GWfR0u" required 
+                  <input type="text" class="form-control" id="appId" placeholder="appId" value="Q6lS8i" required 
+                  style="
+                  border: 0;
+                  outline: 0;
+                  padding: 1rem;
+                  min-width: 400px;
+                  border-radius: 8px;
+              ">
+                  <div class="help-block with-errors pull-right"></div>
+                  <span class="form-control-feedback" aria-hidden="true"></span>
+                </div>
+              </div>
+              
+              <div class="form-group" style="padding: 20px; text-align: center;" >
+                <label for="userId" class="col-sm-3 control-label">USER ID<sup>*</sup></label>
+                <div class="col-sm-9" style="
+                padding-top: 5px;
+            ">
+                  <input type="text" class="form-control" id="userId" placeholder="userId" value="shankartn" required 
                   style="
                   border: 0;
                   outline: 0;
@@ -553,7 +571,7 @@
       <script src="js/validator.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/iri-widget@1.1.1/dist/index.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/iri-verify@1.1.2/dist/index.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/iri-verify@1.1.5/dist/index.min.js"></script>
       <script>
         // var rainbowStyle = "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113); margin-bottom: 12px; padding: 3%";
         // console.group('%cG r e e t i n g s ✨',rainbowStyle);
@@ -570,7 +588,7 @@
           changeToPopup: document.getElementById("changeToPopupSR").checked,
           accountId: document.getElementById("accountId").value,
           appId: document.getElementById("appId").value,
-          linkForTC: 'https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html',
+          linkForTC: 'https://103.76.249.54:9903/AxiomActivateToken/TermsAndCondition.html',
           linkForAbsoluteAndroid: 'https://play.google.com/store/apps/details?id=com.bluebricks.absolutetoken',
           linkForAbsoluteIOS: 'https://apps.apple.com/us/app/absolute-token/id1564689079',
           linkForGoogleAndroid: 'https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2',
@@ -594,7 +612,7 @@
           changeToPopup: document.getElementById("changeToPopupLogin").checked,
           accountId: document.getElementById("accountId").value,
           appId: document.getElementById("appId").value,
-          linkForTC: "https://access.axiomprotect.com:6653/AxiomActivateToken/TermsAndCondition.html",
+          userId: document.getElementById("userId").value,
           onResponse: function onResponse(data) {
             console.log("Response item :::", data);
           },
@@ -609,6 +627,7 @@
         document.getElementById("baseurl").onchange = function() {myFunction()};
         document.getElementById("accountId").onchange = function() {myFunction()};
         document.getElementById("appId").onchange = function() {myFunction()};
+        document.getElementById("userId").onchange = function() {myFunction()};
         document.getElementById("changeToPopupSR").onchange = function() {myFunction()};
         document.getElementById("changeToPopupLogin").onchange = function() {myFunction()};
 
@@ -621,6 +640,7 @@
           configVerify.baseurl= document.getElementById("baseurl").value;
           configVerify.accountId= document.getElementById("accountId").value;
           configVerify.appId= document.getElementById("appId").value;
+          configVerify.userId= document.getElementById("userId").value;
         };
 
         var element1 = document.getElementById("useiri");
